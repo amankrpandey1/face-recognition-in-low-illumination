@@ -5,8 +5,8 @@ def register_face(input_file_path = "",
                   classname = "",
                   database_path="./ImageFace"):
     try:
-        cv2.imread(input_file_path)
-        cv2.imwrite(database_path+"/"+classname+".jpg")
+        img = cv2.imread(input_file_path)
+        cv2.imwrite(database_path+"/"+classname+".jpg",img)
         print("entry done")
     except:
         print("invalid image file")

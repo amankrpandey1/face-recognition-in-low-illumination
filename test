@@ -1,0 +1,7 @@
+python register_face.py './todd.jpg' "Puja"
+
+python face_verify.py ./ImageFace 1 -input_file_path ./ImageFace/Aman\ Pandey.png
+
+python face_verify.py ./ImageFace 1 -input_file_path ./ImageFace/Todd.jpg
+
+python face_verify.py ./ImageFace 0
