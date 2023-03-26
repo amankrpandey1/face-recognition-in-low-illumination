@@ -1,3 +1,8 @@
+pip install -r requirements.txt
+python app.py
+http://localhost:5000
+
+===============
 python register_face.py './todd.jpg' "Puja"
 
 python face_verify.py ./ImageFace 1 -input_file_path ./ImageFace/Aman\ Pandey.png

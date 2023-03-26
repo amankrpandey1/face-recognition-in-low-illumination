@@ -24,8 +24,8 @@ def findEncodings(images):
 
 def faceRecognition(input_folder_path,
                     source='0',
-                    input_file_path='0', 
-                    output_folder_path="./"):
+                    input_file_path='./to_detect', 
+                    output_folder_path="./face_detected"):
     
     path = input_folder_path
     images = []
@@ -77,7 +77,7 @@ def faceRecognition(input_folder_path,
         p2, p98 = np.percentile(img, (3, 97))
         img1 = exposure.rescale_intensity(img, in_range=(p2, p98))
         #img = captureScreen()
-        imgS = cv2.resize(img1,(0,0),None,1,1)
+        imgS = cv2.resize(img1,(0,0),None,0.25,0.25)
         imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
         facesCurFrame = face_recognition.face_locations(imgS)
         encodesCurFrame = face_recognition.face_encodings(imgS,facesCurFrame)

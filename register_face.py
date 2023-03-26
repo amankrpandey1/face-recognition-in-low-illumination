@@ -7,9 +7,9 @@ def register_face(input_file_path = "",
     try:
         img = cv2.imread(input_file_path)
         cv2.imwrite(database_path+"/"+classname+".jpg",img)
-        print("entry done")
+        return "entry done"
     except:
-        print("invalid image file")
+        return "invalid image file"
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser()
@@ -23,7 +23,7 @@ if __name__=="__main__":
         db = args.db 
     
 
-    register_face(input_file_path=args.input_file_path ,
+    print(register_face(input_file_path=args.input_file_path ,
                   classname=args.classname,
-                  database_path=db)
+                  database_path=db))
 
